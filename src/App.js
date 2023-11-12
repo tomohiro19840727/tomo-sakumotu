@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
 const App = () => {
-  const [selectedCrop, setSelectedCrop] = useState('黒大豆麦');
+  const [selectedCrop, setSelectedCrop] = useState('黒大豆');
   const [area, setArea] = useState('');
   const [results, setResults] = useState({});
   const cropYieldMultiplier = {
-    黒大豆麦: 35000,
+    黒大豆: 53000,
+    麦: 71000,
     とうもろこし: 45000,
     飼料用米: 105000,
     新市場: 50000,
