@@ -6,7 +6,8 @@ const App = () => {
   const [results, setResults] = useState({});
   const cropYieldMultiplier = {
     黒大豆: 53000,
-    麦: 71000,
+    春麦:47000,
+    秋小麦:59000,
     とうもろこし: 45000,
     飼料用米: 105000,
     新市場: 50000,
