@@ -5,16 +5,21 @@ const App = () => {
   const [area, setArea] = useState('');
   const [results, setResults] = useState({});
   const cropYieldMultiplier = {
-    黒大豆: 53000,
-    春麦:93000,
-    秋小麦:123000,
-    とうもろこし: 50000,
-    飼料用米: 105000,
-    新市場: 143000,
-    蕎麦: 33000,
-    加工用米: 55000,
-    食用米: 78000
+    黒大豆: 58100, //1俵 15000円 (35000 + 8100 + 15000) 
+    春麦:98300, // 1俵 2800円 (35000 + 8100 + (4俵(2800円 + 6000円）✖️ 4 = 35200) + 20000) 
+    //数量払い 1俵6000円 面積払い1反20000円
+    秋小麦:111100,  // 1俵 2000円 (35000 + 8100 + (6俵(1800円 + 6000円）✖️ 6 = 48000) + 20000) 
+    //数量払い 1俵6000円 面積払い1反20000円
+
+    飼料用米: 104140,//85000(収量) + 15000(省力化) + 3900(町) + (8俵単価30円 = 240円)
+    新市場: 145000,//40000(リノベ) + 20000(道) + 10000(複数) + 15000(省力化) + 6俵（単価10000円）
+    蕎麦: 52720,//20000 + 面積払い13000円 + 数量払い１俵16720円 + 単価1俵3000円  
+    食用米ゆめぴりか: 72000,//6俵,単価12000円
+    食用米ななつぼし: 71500,  //6.5俵 単価11000円
+  
   };
+
+  
 
   const calculateYield = () => {
     const selectedMultiplier = cropYieldMultiplier[selectedCrop];
@@ -29,7 +34,8 @@ const App = () => {
 
   const calculateTotalYield = () => {
     const totalYield = Object.values(results).reduce((total, yieldValue) => total + yieldValue, 0);
-    return totalYield;
+    const totalWithAdditionalAmount = totalYield + 77000; // Add 77,000 yen
+  return totalWithAdditionalAmount;
   };
 
   return (
