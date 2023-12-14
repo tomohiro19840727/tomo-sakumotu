@@ -81,7 +81,7 @@ const App = () => {
   
   const calculateTotalYield = () => {
     const totalYield = Object.values(results).reduce((total, yieldValue) => total + yieldValue, 0);
-    const totalWithAdditionalAmount = totalYield + 77000; // Add 77,000 yen
+    const totalWithAdditionalAmount = totalYield + 770000; // Add 77,0000 yen
   return totalWithAdditionalAmount;
   };
 
